@@ -2,26 +2,32 @@
 
 public class PlayerController : MonoBehaviour
 {
-    string size;
-    bool isShrunk;
+    public float speed_horizontal = 3.0f;
+    public float speed_vertical = 3.0f;
 
-    void Start(){
-        
+    void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
     }
     void Update()
     {
-       var x = Input.GetAxis("Horizontal") * Time.deltaTime * 150.0f;
-        var z = Input.GetAxis("Vertical") * Time.deltaTime * 3.0f;
 
+
+        var x = Input.GetAxis("Horizontal") * Time.deltaTime * speed_horizontal;
+        var z = Input.GetAxis("Vertical") * Time.deltaTime * speed_vertical;
+        
 
         //Blickrichtung horizontal
-        transform.Rotate(0, x, 0);
+        //transform.Rotate(0, x, 0);
 
         //Bewegen
-        transform.Translate(0, 0, z);
+        transform.Translate(x, 0, z);
 
         // Generate a ray from the cursor position
         //var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if(Input.GetKeyDown("escape")){
+            Cursor.lockState = CursorLockMode.None;
+        }
     }
 
 }
