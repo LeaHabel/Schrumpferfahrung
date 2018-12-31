@@ -25,6 +25,7 @@ namespace shrink.project.de
         private State state = State.ORIGINAL_SIZE;
         private enum Actions { SHRINKING, NORMALIZING, GROWING }
         private Actions action = Actions.NORMALIZING;
+        private Vector3 shrunkVector;
 
         // Use this for initialization
         void Start()
@@ -72,6 +73,8 @@ namespace shrink.project.de
                                 (1.0f - progress) * shrunkScale.y + progress * grownScale.y,
                                 (1.0f - progress) * shrunkScale.z + progress * grownScale.z
                             );
+                            
+
                             break;
                         case State.ORIGINAL_SIZE:
                             transform.localScale = new Vector3(
@@ -146,5 +149,8 @@ namespace shrink.project.de
             action = Actions.NORMALIZING;
             timePassed = 0.0f;
         }
+
+        //delegate your callback functions to this empty body
+        public void shrinkCallback(){}
     }
 }

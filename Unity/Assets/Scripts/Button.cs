@@ -4,17 +4,22 @@ using System.Collections.Generic;
 using shrink.project.de;
 using UnityEngine;
 
+
 public class Button : MonoBehaviour
 {
     BoxCollider hitbox;
     GameObject player;
+    Camera player_camera;
     Vector3 playerPosition;
     Vector3 buttonPosition;
     double playerDistance = 0.0;
     bool isBusy;
-    ShrinkOrGrow playerShrinkscript;
-	GameObject box;
+    ShrinkOrGrow playerShrinkscript, environmentShrinkscript;
+	ShrinkOrGrow boxScript;
 	public ParticleSystem beam;
+    public GameObject growableEnvironment;
+
+    public PlayerController playerController;
 
     // Use this for initialization
     void Start()
@@ -26,9 +31,9 @@ public class Button : MonoBehaviour
         Console.WriteLine("buttons position is: " + buttonPosition.ToString());
 
         playerShrinkscript = player.GetComponent<ShrinkOrGrow>();
-
-		box = GameObject.FindGameObjectWithTag("Box");
-
+        environmentShrinkscript = growableEnvironment.GetComponent<ShrinkOrGrow>();
+        boxScript = GameObject.FindGameObjectWithTag("Box").GetComponent<ShrinkOrGrow>();
+        player_camera = player.GetComponentInChildren<Camera>();
     }
 
     // Update is called once per frame
@@ -41,14 +46,18 @@ public class Button : MonoBehaviour
         Console.WriteLine("player/button distance is: %d", playerDistance);
 
         //start shrink beam if player is close enough and presses the action button
-        if (playerDistance <= 5 && Input.GetKeyDown("e"))
+        if (playerDistance <= 2 && Input.GetKeyDown("e"))
         {
-            isBusy = true;
 			beam.Play();
             playerShrinkscript.shrink();
-            isBusy = false;
+            //player_camera.fieldOfView = 120;
+            playerController = player.GetComponent<shrink.project.de.PlayerController>();
 
-			box.GetComponent<ShrinkOrGrow>().shrink();
+            playerController.speed_vertical = 1;
+            playerController.speed_horizontal = 1;
+            //player_camera.aspect = 12/9f;
+            //environmentShrinkscript.grow();
+            boxScript.shrink();
         }
     }
 }
