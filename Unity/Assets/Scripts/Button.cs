@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Timers;
 using shrink.project.de;
 using UnityEngine;
 
@@ -15,9 +16,9 @@ public class Button : MonoBehaviour
     double playerDistance = 0.0;
     bool isBusy;
     ShrinkOrGrow playerShrinkscript, environmentShrinkscript;
-	ShrinkOrGrow boxScript;
-	public ParticleSystem beam;
+    public ParticleSystem beam;
     public GameObject growableEnvironment;
+    AudioSource beamAudio;
 
     public PlayerController playerController;
 
@@ -32,8 +33,8 @@ public class Button : MonoBehaviour
 
         playerShrinkscript = player.GetComponent<ShrinkOrGrow>();
         environmentShrinkscript = growableEnvironment.GetComponent<ShrinkOrGrow>();
-        boxScript = GameObject.FindGameObjectWithTag("Box").GetComponent<ShrinkOrGrow>();
         player_camera = player.GetComponentInChildren<Camera>();
+        beamAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -48,16 +49,28 @@ public class Button : MonoBehaviour
         //start shrink beam if player is close enough and presses the action button
         if (playerDistance <= 2 && Input.GetKeyDown("e"))
         {
-			beam.Play();
+            beam.Play();
+            beamAudio.Play(0);
+
+            playerController = player.GetComponent<shrink.project.de.PlayerController>();
+            //playerController.canMove = false;
+
             playerShrinkscript.shrink();
             //player_camera.fieldOfView = 120;
-            playerController = player.GetComponent<shrink.project.de.PlayerController>();
 
-            playerController.speed_vertical = 1;
-            playerController.speed_horizontal = 1;
+           
+            
+
+            playerController.speed_vertical =  Mathf.SmoothStep(playerController.speed_vertical, 0.5f, 5000);
+            playerController.speed_horizontal = Mathf.SmoothStep(playerController.speed_horizontal, 0.5f, 5000);
+            //player.GetComponent<ConstantForce>().force = new Vector3(0,0.2f,0) ;
+            
+
+
             //player_camera.aspect = 12/9f;
             //environmentShrinkscript.grow();
-            boxScript.shrink();
         }
     }
+
+
 }
