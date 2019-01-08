@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<material>
+  <id type="integer">16425</id>
+  <name>60 Anthrazit</name>
+  <manufacturer-name>Tisca Tiara</manufacturer-name>
+  <product-line-name>MIRA X ALPBACH 8659</product-line-name>
+  <image-file-name>mtex_16425.jpg</image-file-name>
+  <width nil="true"/>
+  <height nil="true"/>
+  <image-ls-file-name nil="true"/>
+  <image-ls-height nil="true"/>
+  <image-ls-width nil="true"/>
+  <image-qs-file-name nil="true"/>
+  <image-qs-height nil="true"/>
+  <image-qs-width nil="true"/>
+  <materialcode></materialcode>
+  <materialgewicht nil="true"/>
+  <materialgewicht-unit>Einheit</materialgewicht-unit>
+  <warmeleitfahigkeit></warmeleitfahigkeit>
+  <uwert></uwert>
+  <brandkennziffer></brandkennziffer>
+  <r-wert></r-wert>
+  <lrv-wert></lrv-wert>
+  <frost-tausalz-cdf></frost-tausalz-cdf>
+  <ausfuehrung></ausfuehrung>
+  <vorsatzdicke></vorsatzdicke>
+  <fase></fase>
+  <qualitaet></qualitaet>
+  <din></din>
+  <masstoleranz-lb></masstoleranz-lb>
+  <kennwerte-info></kennwerte-info>
+  <info nil="true"/>
+  <max-lange-l nil="true"/>
+  <max-lange-b nil="true"/>
+  <max-lange-d nil="true"/>
+  <min-lange-l nil="true"/>
+  <min-lange-b nil="true"/>
+  <min-lange-d nil="true"/>
+  <header>translation missing: de-CH.material_zips.download_zip.header</header>
+  <image-med-file-name>mtex_med_16425.jpg</image-med-file-name>
+  <image-ls-med-file-name nil="true"/>
+  <image-qs-med-file-name nil="true"/>
+  <image-map-bump nil="true"/>
+  <image-map-bump-med nil="true"/>
+  <image-map-displacement nil="true"/>
+  <image-map-displacement-med nil="true"/>
+  <image-map-reflexion nil="true"/>
+  <image-map-reflexion-med nil="true"/>
+  <image-map-diffuse nil="true"/>
+  <image-map-diffuse-med nil="true"/>
+  <image-map-transparency nil="true"/>
+  <image-map-transparency-med nil="true"/>
+  <image-map-specularity nil="true"/>
+  <image-map-specularity-med nil="true"/>
+  <image-map-ambient-occlusion nil="true"/>
+  <image-map-ambient-occlusion-med nil="true"/>
+  <image-map-normal nil="true"/>
+  <image-map-normal-med nil="true"/>
+  <zip-1 nil="true"/>
+  <zip-2>mtex_16425_ifc.zip</zip-2>
+  <zip-3 nil="true"/>
+  <zip-4 nil="true"/>
+  <manufacturer-url>https://www.mtextur.com/search?manufacturer=Tisca+Tiara</manufacturer-url>
+  <manufacturer-email>info@tiscatiara.com</manufacturer-email>
+  <material-url>https://www.mtextur.com/materials/16425</material-url>
+  <product-line-url>https://www.mtextur.com/search?manufacturer=Tisca+Tiara&amp;product_line=MIRA+X+ALPBACH+8659</product-line-url>
+  <product-line-infotext>ALPBACH ist ein hochwertiger strapazierfähiger Möbelstoff mit speziellem Farbdesign. Das moderne Farbenspiel verleiht diesem Artikel die gewisse Note. ALPBACH ist ein pflegeleichter Artikel und für den Objekteinsatz sehr gut geeignet. Dieser dekorative Möbelstoff ist in 13 verschiedenen Farben erhältlich.</product-line-infotext>
+  <image-size>3 MB</image-size>
+  <image-ls-size nil="true"/>
+  <image-qs-size nil="true"/>
+  <image-med-size>1 MB</image-med-size>
+  <image-ls-med-size nil="true"/>
+  <image-qs-med-size nil="true"/>
+  <copyright>translation missing: de-CH.material_zips.download_zip.copyright</copyright>
+  <hinweise-bitte-lesen>translation missing: de-CH.material_zips.download_zip.notes</hinweise-bitte-lesen>
+</material>
